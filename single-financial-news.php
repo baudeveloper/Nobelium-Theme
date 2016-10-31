@@ -32,7 +32,7 @@ get_header(); ?>
                                 <h2><?php the_title(); ?></h2>
                                 <p class="publish-date"><strong><?php _e( 'Published:' ); ?></strong> <span><?php the_time('F j, Y'); ?></span></p>
                                 <p class="back-to-news"><strong><?php _e( 'Navigate:' ); ?></strong> <?php printf( __( '<a href="/financial-news/">Back to Financial News Archive</a>', 'nobelium' ), '/' ); ?></p>
-                                <?php the_content(); ?>                   
+                                <?php the_content(); ?>
                                 <?php the_post_navigation(); ?>
                             <?php endwhile; ?>
                         </article>

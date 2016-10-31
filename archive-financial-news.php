@@ -13,9 +13,9 @@ get_header(); ?>
         <main id="main-content" role="main" name="main">
 
 			<!-- Banner -->
-			<?php get_template_part( 'template-parts/call-to-action' ); ?>	
+			<?php get_template_part( 'template-parts/call-to-action' ); ?>
 
-            <?php 
+            <?php
 
             $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
             $args = array(
@@ -23,11 +23,11 @@ get_header(); ?>
                 'post_type' => 'financial-news',
                 'paged' => $paged,
             );
-            
+
             $the_query = new WP_Query( $args ); ?>
 
             <?php if ( $the_query->have_posts() ) : ?>
-        
+
             <section id="news-listing" class="content">
                 <div class="container">
                     <div class="row">
@@ -42,7 +42,7 @@ get_header(); ?>
                                     <div class="entry-content">
                                         <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                                         <p><?php the_excerpt(); ?></p>
-                                        <a href="<?php the_permalink(); ?>" class="btn btn-secondary btn-sm"><?php _e( 'Read Article' ); ?></a>                       
+                                        <a href="<?php the_permalink(); ?>" class="btn btn-secondary btn-sm"><?php _e( 'Read Article' ); ?></a>
                                     </div>
                                 </li>
                             </ul>
@@ -51,22 +51,24 @@ get_header(); ?>
                     </div>
                     <div class="row">
                     	<div class="col-sm-12">
+<!--
 							<form class="form-inline">
 								<div class="form-group">
-									<?php if (show_posts_nav()) : ?>
-								    <div class="next-posts"><?php next_posts_link('<i class="fa fa-long-arrow-left"></i> Older Financial News') ?></div>
-									<?php endif; ?>
+									<?php //if (show_posts_nav()) : ?>
+								    <div class="next-posts"><?php //next_posts_link('<i class="fa fa-long-arrow-left"></i> Older Financial News') ?></div>
+									<?php //endif; ?>
 								</div>
 								<div class="form-group">
-									<?php if (show_posts_nav()) : ?>
-								    <div class="prev-posts"><?php previous_posts_link('Latest Financial News <i class="fa fa-long-arrow-right"></i>') ?></div>
-									<?php endif; ?>
+									<?php //if (show_posts_nav()) : ?>
+								    <div class="prev-posts"><?php //previous_posts_link('Latest Financial News <i class="fa fa-long-arrow-right"></i>') ?></div>
+									<?php //endif; ?>
 								</div>
-							</form>                    		
+							</form>
+-->
                     	</div>
                     </div>
                 </div>
-            </section>            
+            </section>
 
             <?php wp_reset_postdata(); ?>
 
@@ -86,11 +88,11 @@ get_header(); ?>
 									    <div class="prev-posts"><?php previous_posts_link('Click here for Latest Financial News <i class="fa fa-long-arrow-right"></i>') ?></div>
 										<?php endif; ?>
 									</div>
-								</form>                    		
+								</form>
 	                    	</div>
 	                    </div>
 			        </div>
-			    </section>  
+			    </section>
             <?php endif; ?>
 
 		</main><!-- #main -->
